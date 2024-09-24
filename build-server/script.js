@@ -7,9 +7,9 @@ const Redis = require('ioredis')
 const { Kafka } = require('kafkajs')
 
 // const publisher = new Redis({
-//     host:'redis-12741.c212.ap-south-1-1.ec2.redns.redis-cloud.com',
+//     host:'',
 //     port:12741,
-//     password:'wjFJFgtzCntwQdhUzUtrykTN9il0elYi'
+//     password:''
 // })
 
 
@@ -19,8 +19,8 @@ const { Kafka } = require('kafkajs')
 const s3Client = new S3Client({
     region: 'ap-south-1',
     credentials: {
-        accessKeyId: 'AKIAQXUIXJSCOBQEJOMZ',
-        secretAccessKey: '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'
+        accessKeyId: '',
+        secretAccessKey: 'l'
     }
 })
 
@@ -29,14 +29,14 @@ const DEPLOYEMENT_ID = process.env.DEPLOYEMENT_ID
 
 
 const kafka = new Kafka({
-    clientId: `docker-build-server-${DEPLOYEMENT_ID}`,
-    brokers: ['kafka-3a0337dd-cloudup.i.aivencloud.com:10205'],
+    clientId: ``,
+    brokers: [''],
     ssl: {
-        ca: [fs.readFileSync(path.join(__dirname, 'kafka.pem'), 'utf-8')]
+        ca: [fs.readFileSync(path.join(__dirname, ''), 'utf-8')]
     },
     sasl: {
-        username: 'avnadmin',
-        password: 'AVNS_5yDq_VgkXfHi2JBCzna',
+        username: '',
+        password: '',
         mechanism: 'plain'
     }
 
