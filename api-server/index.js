@@ -42,7 +42,7 @@ const kafka = new Kafka({
 
 })
 
-const consumer = kafka.consumer({ groupId: 'api-server-logs-consumer' })
+const consumer = kafka.consumer({ groupId: '' })
 
 // io.on('connection', socket => {
 //     socket.on('subscribe', channel => {
@@ -144,7 +144,7 @@ app.post('/deploy', async (req, res) => {
         overrides: {
             containerOverrides: [
                 {
-                    name: 'builder-task-10',
+                    name: '',
                     environment: [
                         { name: 'GIT_REPOSITORY__URL', value: project.gitURL },
                         { name: 'PROJECT_ID', value: projectId },
@@ -200,7 +200,7 @@ app.get('/logs/:id', async (req, res) => {
 
 async function initkafkaConsumer() {
     await consumer.connect();
-    await consumer.subscribe({ topics: ['container-logs'], fromBeginning: true })
+    await consumer.subscribe({ topics: [''], fromBeginning: true })
 
     await consumer.run({
         autoCommit: false,
